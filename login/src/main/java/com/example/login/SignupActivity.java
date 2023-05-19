@@ -9,10 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignupActivity extends AppCompatActivity {
+public abstract class SignupActivity extends AppCompatActivity {
 
     private EditText etFullName, etEmail, etPassword, etConfirmPassword;
     private Button btnSignup;
+    public static String email,password,name;
+    protected abstract void checkLoginData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,7 @@ public class SignupActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                isValidInput();
             }
         });
     }
@@ -38,18 +40,20 @@ public class SignupActivity extends AppCompatActivity {
     private boolean isValidInput() {
         if(TextUtils.isEmpty(etEmail.getText().toString()))
             etEmail.setError("Email is required");
+        else
+            email = etEmail.getText().toString();
         if(TextUtils.isEmpty(etPassword.getText().toString()))
             etPassword.setError("Password is required");
         if(TextUtils.isEmpty(etConfirmPassword.getText().toString()))
             etConfirmPassword.setError("Password is required");
         if(!(etConfirmPassword.getText().toString().equals(etPassword.getText().toString())))
             Toast.makeText(this, "Password don't match!!", Toast.LENGTH_SHORT).show();
+        else
+            password = etPassword.getText().toString();
         if(TextUtils.isEmpty(etFullName.getText().toString()))
             etFullName.setError("Name is required");
+        else
+            name = etFullName.getText().toString();
         return true;
-    }
-
-    private void createUserAccount() {
-        // create new user account in your app
     }
 }

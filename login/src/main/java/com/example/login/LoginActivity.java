@@ -9,11 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public abstract  class LoginActivity extends AppCompatActivity {
     private EditText mEmailEditText, mPasswordEditText;
     private Button mLoginButton;
     private TextView mSignupTextView;
-
+    public static String email;
+    public static String password;
+    protected abstract void checkLoginData();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +25,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get input values
-                String email = mEmailEditText.getText().toString().trim();
-                String password = mPasswordEditText.getText().toString().trim();
-
+                email = mEmailEditText.getText().toString().trim();
+                password = mPasswordEditText.getText().toString().trim();
+            //    LoginData();
                 // Validate inputs
                 if (TextUtils.isEmpty(email)) {
                     mEmailEditText.setError("Email is required");
@@ -35,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                     mPasswordEditText.setError("Password is required");
                     return;
                 }
-                Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
