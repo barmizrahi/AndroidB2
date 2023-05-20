@@ -9,12 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public abstract class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
 
     private EditText etFullName, etEmail, etPassword, etConfirmPassword;
     private Button btnSignup;
     public static String email,password,name;
-    protected abstract void checkLoginData();
+
+    public Button getBtnSignup() {
+        return btnSignup;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
