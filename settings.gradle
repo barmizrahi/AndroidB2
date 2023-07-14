@@ -18,3 +18,5 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidB2"
 include ':app'
 include ':login'
+include ':TextFormatter'
+include ':app2'
