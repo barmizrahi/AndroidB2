@@ -3,6 +3,9 @@
 
 The Custom Rating Bar library provides a custom view that emulates the functionality of a Rating Bar for Android applications developed in Java. It allows users to rate something by clicking on stars.
 
+[![](https://jitpack.io/v/barmizrahi/AndroidB2.svg)](https://jitpack.io/#barmizrahi/AndroidB2)
+
+
 
 ## Installation
 
