@@ -8,9 +8,17 @@ The Custom Rating Bar library provides a custom view that emulates the functiona
 
 To use the Custom Rating Bar library in your Android Java project, follow these steps:
 
-1. Download the `RatingBar.java` file from this repository.
-2. Add the `RatingBar.java` file to your project's appropriate package.
-3. In your XML layout file (e.g., `activity_main.xml`), add the `RatingBar` view just like any other Android view:
+1. Add the JitPack repository to your project's build.gradle file:
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+2. Add the library dependency to your app's build.gradle file:
+dependencies {
+	        implementation 'com.github.barmizrahi:AndroidB2:1.0.0.1}
 
    ```xml
    <LinearLayout
