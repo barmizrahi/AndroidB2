@@ -18,7 +18,7 @@ allprojects {
 
 2. Add the library dependency to your app's build.gradle file:
 dependencies {
-	        implementation 'com.github.barmizrahi:AndroidB2:1.0.0.1}
+	        implementation 'com.github.barmizrahi:AndroidB2:1.0.0.2}
 
    ```xml
    <LinearLayout
